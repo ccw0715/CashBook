@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:orientation="vertical"
     android:layout_height="match_parent"
+    android:background="@drawable/register"
     tools:context="com.qianfeng.cashbook.Register">
 
     <LinearLayout
@@ -19,6 +20,7 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="欢迎注册"
+            android:textColor="@color/colorAccent"
             android:textSize="32dp" />
 
         <LinearLayout
@@ -28,7 +30,9 @@
             android:orientation="horizontal">
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="108dp"
+                android:gravity="center"
+                android:textColor="@color/colorPrimaryDark"
                 android:layout_height="wrap_content"
                 android:text="用户名 ："
                 android:textSize="20sp" />
@@ -48,9 +52,11 @@
             android:orientation="horizontal">
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="108dp"
+                android:gravity="center"
                 android:layout_height="wrap_content"
                 android:text="密码 ："
+                android:textColor="@color/colorPrimaryDark"
                 android:textSize="20sp" />
 
             <EditText
@@ -70,7 +76,9 @@
             android:orientation="horizontal">
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="108dp"
+                android:gravity="center"
+                android:textColor="@color/colorPrimaryDark"
                 android:layout_height="wrap_content"
                 android:text="确认密码 ："
                 android:textSize="20sp" />
