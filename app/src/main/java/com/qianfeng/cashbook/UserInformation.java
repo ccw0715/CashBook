@@ -9,7 +9,31 @@ import cn.bmob.v3.BmobObject;
  */
 
 public class UserInformation extends BmobObject {
-    private ImageView picture;
+    private int picId;
     private String name;
     private String autograph;
+
+    public int getPicId() {
+        return picId;
+    }
+
+    public void setPicId(int picId) {
+        this.picId = picId;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getAutograph() {
+        return autograph;
+    }
+
+    public void setAutograph(String autograph) {
+        this.autograph = autograph;
+    }
 }

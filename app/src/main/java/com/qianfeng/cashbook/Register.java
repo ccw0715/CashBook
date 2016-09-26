@@ -36,6 +36,7 @@ public class Register extends AppCompatActivity {
             @Override
             public void onFocusChange(View v, boolean hasFocus) {
                 if (!hasFocus) {
+
                     name = username.getText().toString();
                     BmobQuery<User> query = new BmobQuery<>();
                     query.addWhereEqualTo("username", name);

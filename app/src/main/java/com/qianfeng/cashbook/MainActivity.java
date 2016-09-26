@@ -14,15 +14,14 @@ public class MainActivity extends AppCompatActivity {
 
     private ImageView pic;
     private TextView content;
-    private int img[] = new int[]{R.drawable.a1, R.drawable.a2, R.drawable.a3, R.drawable.a4, R.drawable.a5,
-            R.drawable.a6, R.drawable.a7, R.drawable.a8, R.drawable.a9};
     private String username;
-
+    private int img = R.drawable.a1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         pic = ((ImageView) findViewById(R.id.pic));
+        pic.setImageResource(img);
         content = ((TextView) findViewById(R.id.content));
         Intent intent = getIntent();
         username = intent.getStringExtra("username");
@@ -38,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
     public void alter(View view) {
 
     }
-
+    //添加记账本
     public void addNote(View view) {
         Intent intent = new Intent(this, Add_AccountBook.class);
         intent.putExtra("username", username);
@@ -62,13 +61,13 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-
         switch (item.getItemId()) {
             case R.id.setting:
                 break;
             case R.id.alterInformation:
                 Intent intent=new Intent(this,AlterInformation.class);
                 intent.putExtra("username",username);
+                intent.putExtra("img",img);
                 startActivity(intent);
                 break;
             case R.id.quit:
