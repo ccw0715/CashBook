@@ -59,20 +59,24 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="4dp"
+            android:id="@+id/sex"
             android:orientation="horizontal">
 
             <RadioButton
                 android:layout_width="60dp"
+                android:id="@+id/boy"
                 android:layout_height="wrap_content"
                 android:text="男" />
 
             <RadioButton
                 android:layout_width="60dp"
+                android:id="@+id/girl"
                 android:layout_height="wrap_content"
                 android:text="女" />
 
             <RadioButton
                 android:layout_width="60dp"
+                android:id="@+id/other"
                 android:layout_height="wrap_content"
                 android:text="其他" />
         </RadioGroup>
@@ -103,7 +107,7 @@
         android:layout_marginTop="50dp"
         android:layout_gravity="center"
         android:textSize="24sp"
-        android:onClick="save"
+        android:onClick="saved"
         android:background="@color/colorAccent"
         android:layout_height="60dp" />
 

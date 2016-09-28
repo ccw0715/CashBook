@@ -7,5 +7,27 @@
     android:orientation="vertical"
     tools:context="com.qianfeng.cashbook.QueryData">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_marginTop="8dp"
+        android:gravity="center"
+        android:layout_marginLeft="24dp"
+        android:layout_height="48dp">
+        <Button
+            android:layout_width="128dp"
+            android:layout_height="48dp"
+            android:onClick="lookMonth"
+            android:text="按年月查询" />
+        <Button
+            android:layout_width="128dp"
+            android:layout_height="48dp"
+            android:onClick="lookAll"
+            android:text="查询全部" />
+    </LinearLayout>
 
+    <ListView
+        android:layout_width="match_parent"
+        android:id="@+id/lv"
+        android:layout_height="match_parent">
+    </ListView>
 </LinearLayout>

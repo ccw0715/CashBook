@@ -46,7 +46,7 @@ public class Login extends AppCompatActivity {
                                 //判断密码是否正确
                                 if (user.getPassword().equals(psw)) {
                                     Intent intent = new Intent(Login.this, MainActivity.class);
-                                    intent.putExtra("username", name);
+                                    intent.putExtra("username",name);
                                     startActivity(intent);
                                     finish();
                                 } else {

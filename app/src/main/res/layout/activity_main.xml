@@ -4,74 +4,71 @@
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:background="#c9c9c9"
+    android:orientation="vertical"
     tools:context="com.qianfeng.cashbook.MainActivity">
 
     <LinearLayout
-        android:layout_marginTop="18dp"
-        android:layout_marginLeft="12dp"
         android:layout_width="match_parent"
-        android:orientation="horizontal"
-        android:layout_height="128dp">
+        android:layout_height="128dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginTop="18dp"
+        android:orientation="horizontal">
 
         <ImageView
-            android:layout_width="128dp"
             android:id="@+id/pic"
+            android:layout_width="128dp"
             android:layout_height="128dp" />
+
         <LinearLayout
-            android:layout_marginLeft="10dp"
             android:layout_width="match_parent"
-            android:orientation="vertical"
-            android:layout_height="128dp">
+            android:layout_height="128dp"
+            android:layout_marginLeft="10dp"
+            android:orientation="vertical">
+
             <TextView
-                android:layout_width="match_parent"
                 android:id="@+id/content"
-                android:textSize="24dp"
-                android:textColor="#f508ee"
-                android:layout_margin="6dp"
-                android:layout_height="48dp" />
-            <TextView
                 android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_margin="6dp"
+                android:hint="还没设置昵称"
+                android:textColor="#f508ee"
+                android:textSize="24dp" />
+
+            <TextView
                 android:id="@+id/autograph"
-                android:textColor="#0ce29e"
-                android:hint="还没设置个性签名"
+                android:layout_width="match_parent"
+                android:layout_height="72dp"
                 android:layout_marginTop="8dp"
-                android:layout_height="72dp" />
+                android:hint="还没设置个性签名"
+                android:textColor="#0ce29e" />
 
         </LinearLayout>
     </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_marginTop="6dp"
-        android:layout_marginLeft="12dp"
-        android:layout_height="56dp">
-        <Button
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:text="修改资料"
-            android:onClick="alter"
-            android:layout_height="56dp" />
 
-        <Button
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:text="添加备忘"
-            android:onClick="addNote"
-            android:layout_height="56dp" />
-    </LinearLayout>
 
     <Button
         android:layout_width="128dp"
-        android:text="查看时间轴"
+        android:layout_marginTop="8dp"
+        android:layout_gravity="center"
+        android:layout_height="48dp"
+        android:onClick="addNote"
+        android:text="添加备忘" />
+
+    <Button
+        android:layout_width="128dp"
+        android:layout_height="48dp"
         android:onClick="look"
-        android:layout_height="56dp" />
+        android:layout_marginTop="8dp"
+        android:layout_gravity="center"
+        android:text="查询数据" />
+
     <Button
         android:layout_width="128dp"
-        android:text="..."
-        android:layout_marginTop="6dp"
-        android:layout_marginLeft="12dp"
-        android:layout_height="56dp" />
+        android:layout_height="48dp"
+        android:layout_gravity="center"
+        android:onClick="more"
+        android:text="..." />
 
 
 </LinearLayout>

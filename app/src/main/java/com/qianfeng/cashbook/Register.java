@@ -71,7 +71,7 @@ public class Register extends AppCompatActivity {
                     public void done(String s, BmobException e) {
                         if (e == null) {
                             Intent intent = new Intent(Register.this, MainActivity.class);
-                            intent.putExtra("username", name);
+                            intent.putExtra("username",name);
                             startActivity(intent);
                             finish();
                         } else {

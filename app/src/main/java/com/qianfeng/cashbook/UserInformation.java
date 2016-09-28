@@ -1,7 +1,5 @@
 package com.qianfeng.cashbook;
 
-import android.widget.ImageView;
-
 import cn.bmob.v3.BmobObject;
 
 /**
@@ -11,6 +9,7 @@ import cn.bmob.v3.BmobObject;
 public class UserInformation extends BmobObject {
     private int picId;
     private String name;
+    private String sex;
     private String autograph;
 
     public int getPicId() {
@@ -27,6 +26,14 @@ public class UserInformation extends BmobObject {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getSex() {
+        return sex;
+    }
+
+    public void setSex(String sex) {
+        this.sex = sex;
     }
 
     public String getAutograph() {
