@@ -32,6 +32,7 @@ public class Add_AccountBook extends AppCompatActivity {
     private int currentDay;
     private EditText title;
     private EditText content;
+    private String username;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,8 +43,6 @@ public class Add_AccountBook extends AppCompatActivity {
         year = ((Spinner) findViewById(R.id.year));
         month = ((Spinner) findViewById(R.id.month));
         day = ((Spinner) findViewById(R.id.day));
-        Intent intent = getIntent();
-        String username = intent.getStringExtra("username");
         initYearData();
         ArrayAdapter adapter1 = new ArrayAdapter(this, android.R.layout.simple_list_item_1, yearList);
         year.setAdapter(adapter1);
@@ -119,8 +118,8 @@ public class Add_AccountBook extends AppCompatActivity {
         String t = title.getText().toString();
         String s = content.getText().toString();
         Intent intent = getIntent();
-        String username = intent.getStringExtra("username");
-        if (t.equals("") && s.equals("")) {
+        username = intent.getStringExtra("username");
+        if (t.equals("") || s.equals("")) {
             Toast.makeText(this, "内容为空！", Toast.LENGTH_SHORT).show();
         } else {
             AccountBook book = new AccountBook();
@@ -134,8 +133,6 @@ public class Add_AccountBook extends AppCompatActivity {
                 @Override
                 public void done(String s, BmobException e) {
                     if (e == null) {
-                        Intent intent = new Intent(Add_AccountBook.this, MainActivity.class);
-                        startActivity(intent);
                         finish();
                     } else {
                         Toast.makeText(Add_AccountBook.this, "数据上传失败", Toast.LENGTH_SHORT).show();

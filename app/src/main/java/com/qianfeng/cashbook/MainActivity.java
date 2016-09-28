@@ -18,42 +18,25 @@ public class MainActivity extends AppCompatActivity {
     private TextView content;
     private String username;
     private String nickname;
-    private int img = R.drawable.a1;
     private int picId;
     private String autograph;
     private TextView tv;
 
-    private boolean isFirst = true;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        if (isFirst){
-            Toast.makeText(this, "请先完善个人资料", Toast.LENGTH_SHORT).show();
-            isFirst=false;
-            Intent intent = getIntent();
-            username = intent.getStringExtra("username");
-        }else {
-            pic = ((ImageView) findViewById(R.id.pic));
-            content = ((TextView) findViewById(R.id.content));
-            tv = ((TextView) findViewById(R.id.autograph));
-            Intent intent = getIntent();
-            nickname = intent.getStringExtra("nickname");
-            picId = intent.getIntExtra("picId", img);
-            autograph = intent.getStringExtra("autograph");
-            content.setText(nickname);
-            tv.setText(autograph);
-            pic.setImageResource(picId);
-        }
-        Log.d("哈哈日记", "onCreate: ");
-        Log.d("哈哈日记", "onCreate: "+isFirst);
-        Log.d("哈哈日记", "onCreate: "+username);
-    }
-
-    @Override
-    protected void onPause() {
-        super.onPause();
-        Log.d("哈哈日记", "onPause: ");
+        Intent intent = getIntent();
+        username = intent.getStringExtra("username");
+        pic = ((ImageView) findViewById(R.id.pic));
+        content = ((TextView) findViewById(R.id.content));
+        tv = ((TextView) findViewById(R.id.autograph));
+        nickname = intent.getStringExtra("nickname");
+        picId = intent.getIntExtra("picId", R.drawable.a1);
+        autograph = intent.getStringExtra("autograph");
+        content.setText(nickname);
+        tv.setText(autograph);
+        pic.setImageResource(picId);
     }
 
     //添加记账本
@@ -94,8 +77,9 @@ public class MainActivity extends AppCompatActivity {
             case R.id.alterInformation:
                 Intent intent = new Intent(this, AlterInformation.class);
                 intent.putExtra("username", username);
-                intent.putExtra("img", img);
+                intent.putExtra("img", picId);
                 startActivity(intent);
+                finish();
                 break;
             case R.id.quit:
                 startActivity(new Intent(this, Login.class));
@@ -104,7 +88,6 @@ public class MainActivity extends AppCompatActivity {
         }
         return super.onOptionsItemSelected(item);
     }
-
 
 
 }

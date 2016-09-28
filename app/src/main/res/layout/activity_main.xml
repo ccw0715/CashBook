@@ -17,6 +17,7 @@
 
         <ImageView
             android:id="@+id/pic"
+            android:src="@drawable/a1"
             android:layout_width="128dp"
             android:layout_height="128dp" />
 
@@ -41,7 +42,7 @@
                 android:layout_height="72dp"
                 android:layout_marginTop="8dp"
                 android:hint="还没设置个性签名"
-                android:textColor="#0ce29e" />
+                android:textColor="#2200fd" />
 
         </LinearLayout>
     </LinearLayout>
@@ -49,23 +50,24 @@
 
     <Button
         android:layout_width="128dp"
-        android:layout_marginTop="8dp"
-        android:layout_gravity="center"
         android:layout_height="48dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="8dp"
         android:onClick="addNote"
         android:text="添加备忘" />
 
     <Button
         android:layout_width="128dp"
         android:layout_height="48dp"
-        android:onClick="look"
-        android:layout_marginTop="8dp"
         android:layout_gravity="center"
+        android:layout_marginTop="8dp"
+        android:onClick="look"
         android:text="查询数据" />
 
     <Button
         android:layout_width="128dp"
         android:layout_height="48dp"
+        android:layout_marginTop="8dp"
         android:layout_gravity="center"
         android:onClick="more"
         android:text="..." />

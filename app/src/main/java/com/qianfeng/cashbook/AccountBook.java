@@ -18,6 +18,17 @@ public class AccountBook extends BmobObject{
         return username;
     }
 
+    public AccountBook() {
+    }
+
+    public AccountBook(int year, int month, int day, String title, String content) {
+        this.year = year;
+        this.month = month;
+        this.day = day;
+        this.title = title;
+        this.content = content;
+    }
+
     public void setUsername(String username) {
         this.username = username;
     }
@@ -61,4 +72,5 @@ public class AccountBook extends BmobObject{
     public void setContent(String content) {
         this.content = content;
     }
+
 }

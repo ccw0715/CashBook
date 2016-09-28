@@ -1,5 +1,6 @@
 package com.qianfeng.cashbook;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
@@ -16,6 +17,7 @@ import cn.bmob.v3.listener.SaveListener;
 public class AlterInformation extends AppCompatActivity {
 
     private String username;
+    private String nickname;
     private int picId;
     private String sex;
     private String autograph;
@@ -25,6 +27,7 @@ public class AlterInformation extends AppCompatActivity {
     private EditText et2;
     private RadioGroup rg;
 
+    @SuppressLint("WrongViewCast")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -105,7 +108,7 @@ public class AlterInformation extends AppCompatActivity {
     }
 
     public void saved(View view) {
-        username = et1.getText().toString();
+        nickname = et1.getText().toString();
         autograph = et2.getText().toString();
         final UserInformation userInformation = new UserInformation();
         userInformation.setName(username);
@@ -117,7 +120,8 @@ public class AlterInformation extends AppCompatActivity {
             public void done(String s, BmobException e) {
                 if(e==null){
                     Intent intent = new Intent(AlterInformation.this, MainActivity.class);
-                    intent.putExtra("nickname",username);
+                    intent.putExtra("username",username);
+                    intent.putExtra("nickname",nickname);
                     intent.putExtra("picId",picId);
                     intent.putExtra("autograph",autograph);
                     startActivity(intent);
