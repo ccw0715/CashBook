@@ -3,7 +3,6 @@ package com.qianfeng.cashbook;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -64,7 +63,6 @@ public class MainActivity extends AppCompatActivity {
         MenuInflater inflater = getMenuInflater();
         //加载菜单文件
         inflater.inflate(R.menu.menu, menu);
-
         //返回true表示菜单创建成功
         return true;
     }
@@ -77,6 +75,8 @@ public class MainActivity extends AppCompatActivity {
             case R.id.alterInformation:
                 Intent intent = new Intent(this, AlterInformation.class);
                 intent.putExtra("username", username);
+                intent.putExtra("nickname",nickname);
+                intent.putExtra("autograph",autograph);
                 intent.putExtra("img", picId);
                 startActivity(intent);
                 finish();

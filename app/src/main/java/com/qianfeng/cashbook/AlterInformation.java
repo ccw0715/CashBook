@@ -34,11 +34,15 @@ public class AlterInformation extends AppCompatActivity {
         setContentView(R.layout.activity_alter_information);
         Intent intent = getIntent();
         username = intent.getStringExtra("username");
+        nickname=intent.getStringExtra("nickname");
+        autograph=intent.getStringExtra("autograph");
         picId = intent.getIntExtra("img", R.drawable.a1);
         iv = ((ImageView) findViewById(R.id.iv));
         iv.setImageResource(picId);
         et1 = (EditText) findViewById(R.id.username);
         et2 = (EditText) findViewById(R.id.autograph);
+        et1.setText(nickname);
+        et2.setText(autograph);
         rg = ((RadioGroup) findViewById(R.id.sex));
         rg.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override

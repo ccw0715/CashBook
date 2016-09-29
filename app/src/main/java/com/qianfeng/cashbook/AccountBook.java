@@ -6,7 +6,7 @@ import cn.bmob.v3.BmobObject;
  * Created by 蔡灿武 on 2016/9/26 0026.
  */
 
-public class AccountBook extends BmobObject{
+public class AccountBook extends BmobObject implements Comparable<AccountBook>{
     private String username;
     private int year;
     private int month;
@@ -73,4 +73,15 @@ public class AccountBook extends BmobObject{
         this.content = content;
     }
 
+    @Override
+    public int compareTo(AccountBook o) {
+        int i=o.getYear()-this.getYear();
+        if(i==0){
+            i=o.getMonth()-this.getMonth();
+            if(i==0){
+                i=o.getDay()-this.getDay();
+            }
+        }
+        return i;
+    }
 }

@@ -1,7 +1,6 @@
 package com.qianfeng.cashbook;
 
 import android.content.Context;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -54,7 +53,7 @@ public class MyAdapter extends BaseAdapter{
         }else{
             holder= (ViewHolder) view.getTag();
         }
-        AccountBook book = new AccountBook();
+        AccountBook book = list.get(i);
         holder.time.setText(book.getYear()+"-"+book.getMonth()+"-"+book.getDay());
         holder.title.setText(book.getTitle());
         holder.content.setText(book.getContent());
