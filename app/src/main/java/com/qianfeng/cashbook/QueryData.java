@@ -143,6 +143,7 @@ public class QueryData extends AppCompatActivity {
         for (int i = 1900; i < 2017; i++) {
             yearList.add(i);
         }
+
     }
 
     private void initMonthData() {
