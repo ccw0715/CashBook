@@ -2,6 +2,8 @@ package com.qianfeng.cashbook;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -26,27 +28,37 @@ public class MainActivity extends AppCompatActivity {
     private int picId;
     private String autograph;
     private TextView tv;
-    private static MainActivity instance;
+    private Handler mHandler=new Handler(){
+        @Override
+        public void handleMessage(Message msg) {
+            switch (msg.what){
+                case 0:
+                    content.setText(nickname);
+                    tv.setText(autograph);
+                    pic.setImageResource(picId);
+                    break;
+            }
+        }
+    };
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        initData();
+
         Intent intent = getIntent();
         username = intent.getStringExtra("username");
         pic = ((ImageView) findViewById(R.id.pic));
         content = ((TextView) findViewById(R.id.content));
         tv = ((TextView) findViewById(R.id.autograph));
-//        nickname = intent.getStringExtra("nickname");
-//        picId = intent.getIntExtra("picId", R.drawable.a1);
-//        autograph = intent.getStringExtra("autograph");
+        initData();
+        nickname = intent.getStringExtra("nickname");
+        picId = intent.getIntExtra("picId", R.drawable.a1);
+        autograph = intent.getStringExtra("autograph");
         content.setText(nickname);
         tv.setText(autograph);
         pic.setImageResource(picId);
-
-
 
     }
 
@@ -69,13 +81,15 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+        mHandler.sendEmptyMessage(0);
     }
-//
-//    @Override
-//    protected void onResume() {
-//        super.onResume();
-//
-//    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        initData();
+
+    }
 
 
 
