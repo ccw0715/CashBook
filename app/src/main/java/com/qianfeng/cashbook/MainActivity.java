@@ -53,9 +53,9 @@ public class MainActivity extends AppCompatActivity {
         content = ((TextView) findViewById(R.id.content));
         tv = ((TextView) findViewById(R.id.autograph));
         initData();
-        nickname = intent.getStringExtra("nickname");
-        picId = intent.getIntExtra("picId", R.drawable.a1);
-        autograph = intent.getStringExtra("autograph");
+//        nickname = intent.getStringExtra("nickname");
+//        picId = intent.getIntExtra("picId", R.drawable.a1);
+//        autograph = intent.getStringExtra("autograph");
         content.setText(nickname);
         tv.setText(autograph);
         pic.setImageResource(picId);
@@ -78,10 +78,10 @@ public class MainActivity extends AppCompatActivity {
                             autograph=ui.getAutograph();
                         }
                     }
+                    mHandler.sendEmptyMessage(0);
                 }
             }
         });
-        mHandler.sendEmptyMessage(0);
     }
 
     @Override
