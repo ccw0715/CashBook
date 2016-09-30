@@ -9,8 +9,17 @@ import cn.bmob.v3.BmobObject;
 public class UserInformation extends BmobObject {
     private int picId;
     private String name;
+    private String nickname;
     private String sex;
     private String autograph;
+
+    public String getNickname() {
+        return nickname;
+    }
+
+    public void setNickname(String nickname) {
+        this.nickname = nickname;
+    }
 
     public int getPicId() {
         return picId;

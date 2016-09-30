@@ -116,6 +116,7 @@ public class AlterInformation extends AppCompatActivity {
         autograph = et2.getText().toString();
         final UserInformation userInformation = new UserInformation();
         userInformation.setName(username);
+        userInformation.setNickname(nickname);
         userInformation.setPicId(picId);
         userInformation.setSex(sex);
         userInformation.setAutograph(autograph);
